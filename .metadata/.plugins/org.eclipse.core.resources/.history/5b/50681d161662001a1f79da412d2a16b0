@@ -1,0 +1,281 @@
+package PageObjects;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import com.github.javafaker.Faker;
+import com.github.javafaker.shaded.snakeyaml.scanner.Constant;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
+
+import Utilities.Actions;
+import Utilities.CONSTANT;
+import Utilities.UtilityFn;
+
+public class CreateNewAccountPage extends Actions {
+	public static WebDriver driver;
+	public static ExtentTest Report;
+	UtilityFn util=new UtilityFn();
+	Faker faker = new Faker();
+	
+	public CreateNewAccountPage(WebDriver driver, ExtentTest Report) {
+		this.driver = driver;
+		this.Report = Report;
+		PageFactory.initElements(driver, this);
+
+	}
+
+	@FindBy(xpath = "//button[contains(text(),'Log in')]")
+	@CacheLookup
+	WebElement myERASLoginINButton;
+
+	@FindBy(id = "createAccount")
+	@CacheLookup
+	WebElement createAAMCAccount;
+
+	@FindBy(id = "email")
+	@CacheLookup
+	WebElement userEmail;
+
+	@FindBy(id = "confirmEmail")
+	@CacheLookup
+	WebElement userConfirmEmail;
+	
+	@FindBy(id = "firstName")
+	@CacheLookup
+	WebElement userfirstName;
+
+	@FindBy(id = "lastName")
+	@CacheLookup
+	WebElement userLastName;
+	
+	@FindBy(id = "prefix")
+	@CacheLookup
+	WebElement userPrefix;
+	
+	@FindBy(id = "sex")
+	@CacheLookup
+	WebElement userGender;
+	
+	@FindBy(xpath="//button[@type='submit']")
+	@CacheLookup
+	WebElement oContinueBtn;
+
+	@FindBy(xpath="//input[@value='Medical School Student, Resident or Fellow']")
+	@CacheLookup
+	WebElement oMedicalSchoolRadioBtn;
+
+	
+	@FindBy(xpath="//input[@value='no']")
+	@CacheLookup
+	WebElement oNoRadioBtn;
+	
+	@FindBy(xpath="//button[contains(text(),'Next')]")
+	@CacheLookup
+	WebElement oNextBtn;
+
+	@FindBy(id = "username")
+	@CacheLookup
+	WebElement userID;
+	
+	@FindBy(id = "password")
+	@CacheLookup
+	WebElement userPwd;
+	
+	@FindBy(id = "confirmPassword")
+	@CacheLookup
+	WebElement userConfirmPwd;
+	
+	@FindBy(id = "securityQuestion1")
+	@CacheLookup
+	WebElement oSecQuestion1;
+	
+	@FindBy(id = "question1answer")
+	@CacheLookup
+	WebElement oQuestionAns1;
+
+	@FindBy(id = "securityQuestion2")
+	@CacheLookup
+	WebElement oSecQuestion2;
+	
+	
+	@FindBy(id = "question2answer")
+	@CacheLookup
+	WebElement oQuestionAns2;
+	
+	@FindBy(id = "securityQuestion3")
+	@CacheLookup
+	WebElement oSecQuestion3;
+	
+	
+	@FindBy(id = "question3answer")
+	@CacheLookup
+	WebElement oQuestionAns3;
+
+	
+	@FindBy(id = "termsAndConditions")
+	@CacheLookup
+	WebElement oCheckTC;
+
+
+	@FindBy(xpath="//button[contains(text(),'Submit')]")
+	@CacheLookup
+	WebElement oSubmitBtn;
+	
+
+	public void oClickRegisterButton(WebDriver driver, ExtentTest report) throws InterruptedException
+
+	{
+		try {
+		
+			Thread.sleep(3000);
+
+			Report.log(LogStatus.PASS, "Wait for page load");
+
+			myERASLoginINButton.isDisplayed();
+			myERASLoginINButton.click();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Report.log(LogStatus.FAIL, "Wait for page load did not happened");
+		}
+	}
+
+	public void oClickCreateNewAAMCAccountBtn() {
+
+		try {
+			Report.log(LogStatus.PASS, "Click on Create New AAMC Account");
+
+			createAAMCAccount.isDisplayed();
+			createAAMCAccount.click();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Report.log(LogStatus.FAIL, "Not able to Click on Create New AAMC Account");
+		}
+
+	}
+	public HashMap<String, String> oEnterDataInAAMCPages() {
+		HashMap<String, String> oUserData = new HashMap<String, String>();
+		
+		try {
+	
+ 
+			String firstName = faker.name().firstName();
+			String lastName = faker.name().lastName();
+			String prefix = faker.name().prefix();
+
+	
+			String streetAddress = faker.address().streetAddress();
+			String eMail = firstName + lastName + "@" + "gmail.com";
+			
+		
+			
+			
+			Report.log(LogStatus.PASS, "Click on Create New AAMC Account");
+			//Enter email ID and Confirm 
+			userEmail.isEnabled();
+			userEmail.sendKeys(eMail);
+			userConfirmEmail.isEnabled();
+			userConfirmEmail.sendKeys(eMail);
+			Report.log(LogStatus.PASS, "Entered the email id :" + eMail );
+			Set<Cookie> cookie= driver.manage().getCookies();
+			System.out.println(cookie);
+			
+			//Select Prefix ,FirstName,LastName & Gender
+			
+			Select prefixdropdown=new Select(userPrefix);
+			prefixdropdown.selectByVisibleText(prefix);
+
+			userfirstName.sendKeys(firstName);
+			userLastName.sendKeys(lastName);
+			String oGender=util.getGender();
+			Set<Cookie> cookie23= driver.manage().getCookies();
+			System.out.println(cookie23);
+			System.out.println();
+			
+			Select oGenderdropdown=new Select(userGender);
+			oGenderdropdown.selectByVisibleText(oGender);
+			oContinueBtn.click();
+			Report.log(LogStatus.PASS, "Entered Prefix :" + prefix +" Firstname :" + firstName +" Lastname :" + lastName+" Gender: "+oGender);
+			Report.log(LogStatus.INFO, "Moving to Next Page2");
+			
+			//Page2 InitialQuestions
+			oMedicalSchoolRadioBtn.click();
+			oNoRadioBtn.click();
+			System.out.println(driver.manage().getCookies());
+			oNextBtn.click();
+			
+			Report.log(LogStatus.INFO, "New Account Page3 is Displayed");
+			//Page3 AccountInformation
+			String oUserID=util.GenerateRandomNamesandAlphabets(CONSTANT.UserID);
+			userID.sendKeys(oUserID);
+			userPwd.sendKeys(CONSTANT.Password);
+			userConfirmPwd.sendKeys(CONSTANT.Password);
+			System.out.println(CONSTANT.Password);
+			Thread.sleep(1000);
+			
+			Set<Cookie> cookie1= driver.manage().getCookies();
+			System.out.println(cookie1);
+			
+			//Enter Security Questions
+			Select SecQuestion1=new Select(oSecQuestion1); 
+			SecQuestion1.selectByIndex(Integer.parseInt(util.GenerateRandomNamesandAlphabets("answer")));
+			Thread.sleep(2000);
+			oQuestionAns1.sendKeys(CONSTANT.ANSWER1);
+		
+			
+			Select SecQuestion2=new Select(oSecQuestion2); 
+			SecQuestion2.selectByIndex(Integer.parseInt(util.GenerateRandomNamesandAlphabets("answer")));
+			Thread.sleep(2000);
+			oQuestionAns2.sendKeys(CONSTANT.ANSWER2);
+			Thread.sleep(2000);
+			
+			Select SecQuestion3=new Select(oSecQuestion3); 
+			Thread.sleep(2000);
+			SecQuestion3.selectByIndex(Integer.parseInt(util.GenerateRandomNamesandAlphabets("answer")));
+			oQuestionAns3.sendKeys(CONSTANT.ANSWER3);
+			Thread.sleep(2000);
+			
+			oCheckTC.click();
+			oSubmitBtn.click();
+			Set<Cookie> cookie2= driver.manage().getCookies();
+			System.out.println(cookie2);
+			
+			//Storing Data
+			oUserData.put("firstName", firstName);
+			oUserData.put("lastName", lastName);
+			oUserData.put("prefix", prefix);
+			oUserData.put("eMail", eMail);
+			oUserData.put("streetAddress", streetAddress);
+			oUserData.put("Gender", oGender);
+			oUserData.put("userid",oUserID);
+			oUserData.put("Password",CONSTANT.Password);
+			oUserData.put("SecQuestionAns1",CONSTANT.ANSWER1);
+			oUserData.put("SecQuestionAns2",CONSTANT.ANSWER2);
+			oUserData.put("SecQuestionAns3",CONSTANT.ANSWER3);
+			oUserData.put("Password",CONSTANT.Password);
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+			Report.log(LogStatus.FAIL, "Not able to Click on Create New AAMC Account");
+		}
+
+		return oUserData;	
+		
+	}
+
+	
+	
+
+
+}
