@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>AAMC_Eras</groupId>
+  <artifactId>AAMC_Eras</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>AAMC_Eras</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <seleniumVersion>3.141.59</seleniumVersion>
+    <testNgVersion>6.5.1</testNgVersion>
+    <logVersion>1.2.17</logVersion>
+    <cucumberVersion>5.4.1</cucumberVersion>
+    <cukesVersion>1.2.6</cukesVersion>
+    <cukestextngVersion>1.2.5</cukestextngVersion>
+    <cucumbertestngVersion>2.0.0</cucumbertestngVersion>
+    <cucumberjavaVersion>1.2.5</cucumberjavaVersion>
+    <jvmdepsVersion>1.0.5</jvmdepsVersion>
+    <extentreportsVersion>3.0.0</extentreportsVersion>
+    <commonIOVersion>2.4</commonIOVersion>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      	<groupId>org.seleniumhq.selenium</groupId>
+      	<artifactId>selenium-java</artifactId>
+      	<version>${seleniumVersion}</version>
+    </dependency>
+    
+    <dependency>
+	    <groupId>org.testng</groupId>
+	    <artifactId>testng</artifactId>
+	    <version>${testNgVersion}</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>${logVersion}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>io.cucumber</groupId>
+	    <artifactId>cucumber-java</artifactId>
+	    <version>${cucumberVersion}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>info.cukes</groupId>
+	    <artifactId>cucumber-testng</artifactId>
+	    <version>${cukesVersion}</version>
+	    <type>pom</type>
+	</dependency> 
+	 
+	<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>${cukestextngVersion}</version>
+		</dependency>
+	<dependency>
+		    <groupId>io.cucumber</groupId>
+		    <artifactId>cucumber-testng</artifactId>
+		    <version>${cucumbertestngVersion}</version>
+	</dependency>
+		
+	<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumberjavaVersion}</version>
+	</dependency>
+		
+	<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-jvm-deps</artifactId>
+			<version>${jvmdepsVersion}</version>
+			<scope>provided</scope>
+	</dependency> 
+	
+	<dependency>
+		    <groupId>com.aventstack</groupId>
+		    <artifactId>extentreports</artifactId>
+		    <version>${extentreportsVersion}</version>
+	</dependency>
+	 
+	 <dependency>
+		    <groupId>commons-io</groupId>
+		    <artifactId>commons-io</artifactId>
+		    <version>${commonIOVersion}</version>
+	 </dependency>
+	 
+  </dependencies>
+</project>

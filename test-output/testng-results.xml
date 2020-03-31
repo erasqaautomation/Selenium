@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="41520" started-at="2020-03-31T03:24:45Z" finished-at="2020-03-31T03:25:27Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="41520" started-at="2020-03-31T03:24:45Z" finished-at="2020-03-31T03:25:27Z">
+      <class name="aamc.ui.runner.TestRunner">
+        <test-method status="PASS" signature="setUP()[pri:0, instance:aamc.ui.runner.TestRunner@28d25987]" name="setUP" is-config="true" duration-ms="3344" started-at="2020-03-31T03:24:45Z" finished-at="2020-03-31T03:24:49Z">
+        </test-method> <!-- setUP -->
+        <test-method status="PASS" signature="login(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:aamc.ui.runner.TestRunner@28d25987]" name="login" duration-ms="24374" started-at="2020-03-31T03:24:49Z" description="login" data-provider="features" finished-at="2020-03-31T03:25:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Dashboard]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="login(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:aamc.ui.runner.TestRunner@28d25987]" name="login" duration-ms="11252" started-at="2020-03-31T03:25:13Z" description="login" data-provider="features" finished-at="2020-03-31T03:25:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Login To PDWS]]>
+              </value>
+            </param>
+          </params>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:aamc.ui.runner.TestRunner@28d25987]" name="tearDown" is-config="true" duration-ms="2448" started-at="2020-03-31T03:25:25Z" finished-at="2020-03-31T03:25:27Z">
+        </test-method> <!-- tearDown -->
+      </class> <!-- aamc.ui.runner.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

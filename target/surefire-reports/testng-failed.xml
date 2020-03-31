@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [aamc.ui.runner.TestRunner]">
+  <test name="Command line test(failed)" preserve-order="true">
+    <classes>
+      <class name="aamc.ui.runner.TestRunner">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUP"/>
+          <include name="login" invocation-numbers="1"/>
+        </methods>
+      </class> <!-- aamc.ui.runner.TestRunner -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [aamc.ui.runner.TestRunner] -->
