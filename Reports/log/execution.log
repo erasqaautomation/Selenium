@@ -1,0 +1,10 @@
+2020-03-31 06:16:45,814 INFO [Verify PDWS dashboard filter] - *************Started logs for feature:Dashboard and Scenario : Verify PDWS dashboard filter***********
+2020-03-31 06:16:48,786 INFO [Verify PDWS dashboard filter] - retrieving list of webelements with locator name:'
+2020-03-31 06:17:11,401 INFO [Authenication1] - *************Started logs for feature:Dashboard and Scenario : Authenication1***********
+2020-03-31 06:17:22,678 INFO [Authenication] - *************Started logs for feature:Login To PDWS and Scenario : Authenication***********
+2020-03-31 06:26:00,774 INFO [Verify PDWS dashboard filter] - *************Started logs for feature:Dashboard and Scenario : Verify PDWS dashboard filter***********
+2020-03-31 06:26:02,929 INFO [Verify PDWS dashboard filter] - retrieving list of webelements with locator name:'
+2020-03-31 06:26:25,494 INFO [Authenication] - *************Started logs for feature:Login To PDWS and Scenario : Authenication***********
+2020-03-31 06:29:25,702 INFO [Verify PDWS dashboard filter] - *************Started logs for feature:Dashboard and Scenario : Verify PDWS dashboard filter***********
+2020-03-31 06:29:28,289 INFO [Verify PDWS dashboard filter] - retrieving list of webelements with locator name:'
+2020-03-31 06:29:50,525 INFO [Authenication] - *************Started logs for feature:Login To PDWS and Scenario : Authenication***********

@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 129789663,
+  "duration": 182361833,
   "status": "passed"
 });
 formatter.scenario({
@@ -48,32 +48,32 @@ formatter.match({
   "location": "Dashboard.open_Application_and_Enter_url()"
 });
 formatter.result({
-  "duration": 1794506790,
+  "duration": 2574120680,
   "status": "passed"
 });
 formatter.match({
   "location": "Dashboard.login_page_is_loaded_Enter_auto_tester_in_step()"
 });
 formatter.result({
-  "duration": 5271538072,
+  "duration": 5300731924,
   "status": "passed"
 });
 formatter.match({
   "location": "Dashboard.enter_Auto()"
 });
 formatter.result({
-  "duration": 78521910,
+  "duration": 100885288,
   "status": "passed"
 });
 formatter.match({
   "location": "Dashboard.application()"
 });
 formatter.result({
-  "duration": 16723500647,
+  "duration": 16501640369,
   "status": "passed"
 });
 formatter.after({
-  "duration": 295442963,
+  "duration": 317108444,
   "status": "passed"
 });
 formatter.uri("Login.feature");
@@ -85,7 +85,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 124455,
+  "duration": 2053514,
   "status": "passed"
 });
 formatter.scenario({
@@ -126,32 +126,32 @@ formatter.match({
   "location": "LoginPage.open_Application_and_Enter_url()"
 });
 formatter.result({
-  "duration": 533628954,
+  "duration": 538997473,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginPage.enter_username()"
 });
 formatter.result({
-  "duration": 5172438877,
+  "duration": 5173644046,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginPage.enter_password()"
 });
 formatter.result({
-  "duration": 207757432,
+  "duration": 234733141,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginPage.verify_Msg()"
 });
 formatter.result({
-  "duration": 5249297969,
+  "duration": 5240026829,
   "status": "passed"
 });
 formatter.after({
-  "duration": 70928949,
+  "duration": 60883113,
   "status": "passed"
 });
 });

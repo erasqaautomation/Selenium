@@ -6,16 +6,18 @@ import aamc.ui.runner.TestRunner;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import aamc.ui.utility.CommonUtility;
 import aamc.ui.utility.Report;
 
 
-public class Dashboard {
+public class Dashboard extends CommonUtility {
 	
 	@Given("^Open Application and Enter urls$")
 	public void open_Application_and_Enter_url() throws Throwable {
 		
 		TestRunner.driver.get("https://apps.ftest.aamc.org/pdws-web");
 		Report.log(Report.status.FAIL, "login successfull");
+		logger.info("retrieving list of webelements with locator name:'");
 	  
 	}
 	

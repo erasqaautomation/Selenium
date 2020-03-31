@@ -9,9 +9,6 @@ When Login page is loaded Enter
 Then Enter 
 Then click on applications
     
-    
-    
-
 
     
       

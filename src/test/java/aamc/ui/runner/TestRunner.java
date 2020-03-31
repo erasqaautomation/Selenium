@@ -25,6 +25,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 public class TestRunner {
 	public static WebDriver driver;
 	private TestNGCucumberRunner testRunner;
+	public static String featureName;
 	
 	@BeforeClass
 	public void setUP()
@@ -39,6 +40,7 @@ public class TestRunner {
 	@Test(description="login",dataProvider="features")
 	public void login(CucumberFeatureWrapper cFeature)
 	{	
+		featureName =cFeature.toString();
 		testRunner.runCucumber(cFeature.getCucumberFeature());
 		
 	}
